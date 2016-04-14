@@ -528,7 +528,7 @@ class PastebinAPI(object):
         binary_data = data.encode('utf-8')
 
         # lets try to read the URL that we've just built.
-        request_string = urllib.urlopen(self._api_url, binary_data)
+        request_string = urllib.request.urlopen(self._api_url, binary_data)
         response = request_string.read()
 
         # do some basic error checking here so we can gracefully handle any 
