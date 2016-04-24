@@ -9,10 +9,24 @@ access_secret = user_info[4,1]
   
 setup_twitter_oauth(consumer_key, consumer_secret, access_token, access_secret)
 
-tweet = 'Test'
+setRunStatus = function(currentStatus = NULL, updatedStatus) {
+  if (is.null(currentStatus)) {
 
-ns = updateStatus(tweet)
-deleteStatus(ns)
+    newStatus = updateStatus(updatedStatus)
+    return(newStatus)
+    
+  } else if (currentStatus$text == updatedStatus) {
 
-cs = homeTimeline(1)
-deleteStatus(cs[[1]])
+    return(currentStatus)
+    
+  } else {
+    
+    cs = userTimeline('Texxors', 1)
+    deleteStatus(cs[[1]])
+    
+    newStatus = updateStatus(updatedStatus)
+    return(newStatus)
+  }
+}
+
+
