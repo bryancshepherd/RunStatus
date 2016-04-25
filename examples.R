@@ -6,3 +6,11 @@ newStatus = setRunStatus(newStatus, updatedStatus = 'testing')
 
 # Actually change the status
 newStatus = setRunStatus(newStatus, updatedStatus = 'testing again')
+
+# Better yet, use the wrappers
+setStatusWorking()
+
+setStatusDone()
+
+# Get rid of a batch of previous tweets
+cleanupTimeline()
